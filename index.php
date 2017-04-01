@@ -4,6 +4,7 @@
 	<title>Openelective management system</title>
 <?php
 	include_once('head.php');
+  include_once('dbconnect.php');
 ?>
 </head>
 <body>
@@ -19,19 +20,21 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#home" class="smoothScroll">Home</a></li>
-    		<li class="active"> <a href="#about" class="smoothScroll"> About</a></li>
-			<li class=""> <a href="#services" class="smoothScroll"> Services</a></li>
-			<li class=""> <a href="#team" class="smoothScroll"> Team</a></li>
-			<li class=""> <a href="#portfolio" class="smoothScroll"> Portfolio</a></li>
-			<li class=""> <a href="#blog" class="smoothScroll"> Blog</a></li>
-			<li class=""> <a href="#contact" class="smoothScroll"> Contact</a></li>
-        </ul></div><!--/.nav-collapse -->
+            <li class="active"><a href="#home" class="smoothScroll">Home</a></li>
+    		    <li> <a href="#about" class="smoothScroll"> About</a></li>
+			  </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="admin/">Admin</a></li>
+          <li><a href="student/"">Student section</a></li>
+          <li><a href="dept/">Department section</a></li>
+        </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
     </div>
-<div id="particles">
-  <div id="intro">
+
+<!-- <div id="particles">
+<div id="intro">
 <center>
 <p>
 <a href="admin/" class="btn">Admin</a> |
@@ -39,8 +42,44 @@
 <a href="dept/" class="btn">Department section</a> 
 </p>
 </center>
-  </div>
 </div>
-</body>
+</div> -->
+<div class="jumbotron" style="background: transparent; color: black">
+  <br>
+  <center>
+    <h1>Open Elective Management System</h1>
+    <div class="container">
+    <div class="row little-padding">
+        <div class="col-md-3">
+            <?php
+                 $qr=mysqli_query($connection," SELECT COUNT(deptid) as total FROM dept_login");
+                 $num_rows = mysqli_fetch_assoc($qr);
+                 echo "Registered Departments - ";
+                 echo $num_rows['total'];      
+            ?>
+        </div>
+        <div class="col-md-3">
+        <?php
+                 $qr=mysqli_query($connection," SELECT COUNT(rollno) as total FROM student_login");
+                 $num_rows = mysqli_fetch_assoc($qr);
+                 echo "Registered Departments - ";
+                 echo $num_rows['total'];      
+            ?>            
+        </div>
+        <div class="col-md-3">
+        <?php
+                 //Allotted electives count to students
+                 /*$qr=mysqli_query($connection," SELECT COUNT(deptid) as total FROM dept_login");
+                 $num_rows = mysqli_fetch_assoc($qr);
+                 echo "Registered Departments - ";
+                 echo $num_rows['total'];      */
+            ?>            
+        </div>
+    </div>
+</div>
+</center>
+</div>
 
+
+</body>
 </html>
