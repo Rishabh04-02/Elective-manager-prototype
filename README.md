@@ -10,7 +10,7 @@ php, javascript
 ## Features to implement
 - [x] Once a user logs in a particular section i.e. admin/student/department she can access contents of any other section also using the session of the previously logged in section - put some restriction on this thing using any token/etc.
 
-- [ ] Add option in dept to update info & link.
+- [x] Add option in dept to update info & link.
 
 - [x] Create view in students section to view syllabus & info of every elective, this view should also be accessible from the index page of site.
 
@@ -36,4 +36,4 @@ php, javascript
 
 - [ ] after allotment dept will put the classes schedule and the selected students will get it by mail or in the web app.
 
-- [ ] update the dept registration form with updated sql statements.
+- [x] update the dept registration form with updated sql statements.
