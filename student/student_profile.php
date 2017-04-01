@@ -118,6 +118,10 @@ if(isset($_POST['prioritize']))
 {
   include_once('student_prioritize.php');
 }
+else if(isset($_POST['syllabus']))
+{
+  include_once('student_syllabus.php'); 
+}
 else
 {
   include_once('student_content.php'); 
