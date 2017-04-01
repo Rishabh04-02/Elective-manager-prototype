@@ -5,17 +5,17 @@ create table $uname with students applying -> rollno, branch code , cgpa, priori
 <div class="jumbotron">
 <?php
 include_once("../dbconnect.php");
+                     
 
-
-if(isset($_POST['set-priority']))
+if(isset($_POST['priority']))
 {
 
 //catch the details from form here
-	$seats=$_POST['seats'];
-	$link=$_POST['link'];
-	$info=$_POST['info'];
+$prior=$_POST['priority'];
+echo "$prior";
+/*
 
-	//session username
+	
 	$outname=$_SESSION['login_user'];
 	
 	//fetch elective id from the current session username
@@ -54,37 +54,38 @@ if(isset($_POST['set-priority']))
 		{
     		echo "Error: " . $sql . "<br>" . mysqli_error($connection);
 		}
-
+*/
 }
-
 else
 {
-
 ?>
 
 <center>
-<h3><code>Fill the details below to publish elective</code></h3>
+<h3><code>Prioritize the electives below</code></h3>
 </center>
-<form id="elective-form" action="" method="post" role="form" >
-									<div class="form-group">
-										<input type="number" name="seats" id="seats" tabindex="1" class="form-control" placeholder="Number of seats available" value="" required>
-									</div>
-									<div class="form-group">
-										<input type="text" name="link" id="link" tabindex="1" class="form-control" placeholder="Paste here the link to elective's syllabus (.pdf,.html)" value="" required>
-									</div>
-									<div class="form-group">
-										<textarea name="info" class="form-control" placeholder="Add information about elective here" required></textarea>
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="elective-submit" id="elective-submit" tabindex="4" class="form-control btn btn-info" value="Confirm Publish">
-											</div>
-										</div>
-									</div>
+<form id="elective-forma" action="" method="post" role="form" >
+<?php
+
+		$abc="SELECT  elecname  FROM elective WHERE publish=1";
+                        if($result = mysqli_query($connection, $abc))
+                              {
+                                while($rowa = mysqli_fetch_array($result))
+                                  { 
+                                    $out=$rowa['elecname'];
+?>
+						<div>
+                        <input type="submit" name="priority" id="<?php echo $out; ?>" tabindex="4" class="form-control btn btn-info" value="<?php echo $out; ?>">
+                      </div>
+                          
+									<?php
+								}
+							}
+							?>						
+									
+							
 </form>
 </div>
-<<?php 
+<?php 
 }
 
 ?>
