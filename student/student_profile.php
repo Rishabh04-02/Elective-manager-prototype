@@ -32,21 +32,23 @@ include('student_session.php');
                               Someting here
                           </a>
                       </div>
-                      <ul class="inbox-nav inbox-divider">
+                      <ul class="inbox-nav inbox-divider nav nav-pills nav-stacked labels-info inbox-divider">
+                      <li> <h4>Available Electives</h4> </li>
                       <?php
                             $abc="SELECT  elecname  FROM elective WHERE 1";
-  if($result = mysqli_query($connection, $abc))
-  {
-  while($rowa = mysqli_fetch_array($result))
-  {
-  $out=$rowa['elecname'];
+                            if($result = mysqli_query($connection, $abc))
+                              {
+                                while($rowa = mysqli_fetch_array($result))
+                                  { 
+                                    $out=$rowa['elecname'];
   
                       ?>
                           <li class="active">
                               <a href="#"><i class="fa fa-inbox"></i> <?php echo $out; ?> <span class="label label-info pull-right">New</span></a>
                               </li>
                               <?php 
-                                    } }
+                                    }
+                                     }
                               ?>
                        
                       </ul>
