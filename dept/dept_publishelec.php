@@ -39,7 +39,7 @@ if(isset($_POST['elective-submit']))
     		{
     			echo "<center>Elective successfully published</center><br>";
     			//adding a refresh button 
-    			$url="dept.php";
+    			$url="dept_profile.php";
     			print("<center><a href=$url >Click here</a></center>");
     		}
     		else
