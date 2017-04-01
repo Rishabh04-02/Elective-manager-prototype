@@ -12,9 +12,9 @@ php, javascript
 
 - [ ] Add option in dept to update info & link.
 
-- [ ] Create view in students section to view syllabus & info of every elective, this view should also be accessible from the index page of site.
+- [x] Create view in students section to view syllabus & info of every elective, this view should also be accessible from the index page of site.
 
-- [ ] The index page will show the no. of registered departments, no of seates allotted in all departments, total alloted %, the links to dept's info will also be available here.
+- [x] The index page will show the no. of registered departments, no of seates allotted in all departments, total alloted %, the links to dept's info will also be available here.
 
 - [x] Create student view.
 
@@ -24,7 +24,7 @@ php, javascript
 
 - [ ] FCFS option will also be present in dept
 
-- [ ] make students section
+- [x] make students section
 
 - [x] create separate table for each elective and add entries to it when a student opts for an elective
 
