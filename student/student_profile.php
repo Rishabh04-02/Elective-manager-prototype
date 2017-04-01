@@ -43,7 +43,7 @@ include('student_session.php');
   
                       ?>
                           <li class="active">
-                              <a href="#"><i class="fa fa-inbox"></i> <?php echo $out; ?> <span class="label label-danger pull-right">New</span></a>
+                              <a href="#"><i class="fa fa-inbox"></i> <?php echo $out; ?> <span class="label label-info pull-right">New</span></a>
                               </li>
                               <?php 
                                     } }
