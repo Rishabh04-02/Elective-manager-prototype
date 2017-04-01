@@ -8,7 +8,7 @@ php, javascript
 
 
 ## Features to implement
-[x] Once a user logs in a particular section i.e. admin/student/department she can access contents of any other section also using the session of the previously logged in section - put some restriction on this thing using any token/etc.
+- [x] Once a user logs in a particular section i.e. admin/student/department she can access contents of any other section also using the session of the previously logged in section - put some restriction on this thing using any token/etc.
 
 - [ ] Add option in dept to update info & link.
 
