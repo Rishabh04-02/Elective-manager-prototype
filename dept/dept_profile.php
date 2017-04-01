@@ -80,24 +80,21 @@ include_once("../dbconnect.php");
                               Delete elective
                           </a>
                       </div>
-                      <ul class="inbox-nav inbox-divider">
-                          <li class="active">
-                              <a href="#"><i class="fa fa-inbox"></i> Inbox <span class="label label-danger pull-right">2</span></a>
 
-                          </li>
-                          <li>
-                              <a href="#"><i class="fa fa-envelope-o"></i> Sent Mail</a>
-                          </li>
-                          <li>
-                              <a href="#"><i class="fa fa-bookmark-o"></i> Important</a>
-                          </li>
-                          <li>
-                              <a href="#"><i class=" fa fa-external-link"></i> Drafts <span class="label label-info pull-right">30</span></a>
-                          </li>
-                          <li>
-                              <a href="#"><i class=" fa fa-trash-o"></i> Trash</a>
-                          </li>
+                      <!--st-->
+                       <ul class="inbox-nav inbox-divider nav nav-pills nav-stacked labels-info inbox-divider">
+                      <li class="active">
+                          <a href="#"><i class="fa fa-inbox"></i> Studen List <span class="label label-info pull-right"></a>
+                            <form action="" method="post">
+                            <div>
+                        <input type="submit" name="student-list" id="student-list tabindex="4" class="form-control btn btn-info" value="Student">
+                      </div>
+                          </form>
+                              </li>
+
                       </ul>
+                      <!--sdf_-->       
+                       
                       <ul class="nav nav-pills nav-stacked labels-info inbox-divider">
                           <li> <h4>Labels</h4> </li>
                           <li> <a href="#"> <i class=" fa fa-sign-blank text-danger"></i> Work </a> </li>
@@ -148,6 +145,10 @@ else if($_POST['update-elective'])
 else if(isset($_POST['elective-submit']))
 {
   include_once('dept_publishelec.php');
+}
+else if(isset($_POST['student-list']))
+{
+  include_once('dept_student_list.php');
 }
 else
 {
