@@ -57,11 +57,23 @@ include_once("../dbconnect.php");
 
 ?>
                       <div class="inbox-body">
+                          <!-- publish elective form -->
                           <form action="" method="post">
                             <div>
                         <input type="submit" name="<?php echo $pub; ?>" id="<?php echo $pub; ?>" tabindex="4" class="form-control btn btn-info" value="<?php echo $pub; ?>">
                       </div>
                           </form>
+                      </div>
+                      <!-- publish elective form -->
+                        <div class="inbox-body">
+                          
+                        <!-- update elective form -->
+                          <form action="" method="post">
+                            <div>
+                        <input type="submit" name="update-elective" id="update-elective" tabindex="4" class="form-control btn btn-info" value="update-elective">
+                      </div>
+                          </form>
+                          <!-- update elective form ends -->
                       </div>
                         <div class="inbox-body">
                           <a href="#myModal" data-toggle="modal"  title="Compose"    class="btn btn-compose">
@@ -128,6 +140,10 @@ include_once("../dbconnect.php");
 if(isset($_POST['publish-elective']))
 {
   include_once('dept_publishelec.php');
+}
+else if($_POST['update-elective'])
+{
+  include_once('dept_updateelec.php');
 }
 else if(isset($_POST['elective-submit']))
 {
