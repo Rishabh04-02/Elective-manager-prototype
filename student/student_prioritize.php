@@ -7,7 +7,7 @@ create table $uname with students applying -> rollno, branch code , cgpa, priori
 include_once("../dbconnect.php");
 
 
-if(isset($_POST['prioritize']))
+if(isset($_POST['set-priority']))
 {
 
 //catch the details from form here

@@ -67,7 +67,12 @@ include('student_session.php');
   
                       ?>
                           <li class="active">
-                              <a href="#"><i class="fa fa-inbox"></i> <?php echo $out; ?> <span class="label label-info pull-right">New</span></a>
+                          <a href="#"><i class="fa fa-inbox"></i> <?php echo $out; ?> <span class="label label-info pull-right"></a>
+                            <form action="" method="post">
+                            <div>
+                        <input type="submit" name="syllabus" id="<?php echo $out; ?>" tabindex="4" class="form-control btn btn-info" value="<?php echo $out; ?>">
+                      </div>
+                          </form>
                               </li>
                               <?php 
                                     }
