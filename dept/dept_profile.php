@@ -74,12 +74,16 @@ include_once("../dbconnect.php");
                       </div>
                           </form>
                           <!-- update elective form ends -->
+                          <!-- delete elective form -->
+                           <form action="" method="post">
                       </div>
                         <div class="inbox-body">
-                          <a href="#myModal" data-toggle="modal"  title="Compose"    class="btn btn-compose">
-                              Delete elective
-                          </a>
+                          
+                          <input type="submit" name="delete-elective" id="delete-elective" tabindex="4" class="btn btn-compose" value=" Delete-elective">
+
                       </div>
+                      </form>
+                      <!-- update elective form ends -->
 
                       <!--st-->
                        <ul class="inbox-nav inbox-divider nav nav-pills nav-stacked labels-info inbox-divider">
@@ -149,6 +153,10 @@ else if(isset($_POST['elective-submit']))
 else if(isset($_POST['student-list']))
 {
   include_once('dept_student_list.php');
+}
+else if(isset($_POST['delete-elective']))
+{
+  include_once('dept_delete_elective.php');
 }
 else
 {
