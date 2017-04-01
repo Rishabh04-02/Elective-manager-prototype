@@ -32,23 +32,25 @@ include('student_session.php');
                               Someting here
                           </a>
                       </div>
-                      <ul class="inbox-nav inbox-divider">
+                      <ul class="inbox-nav inbox-divider nav nav-pills nav-stacked labels-info inbox-divider">
+                      <li> <h4>Available Electives</h4> </li>
+                      <?php
+                            $abc="SELECT  elecname  FROM elective WHERE 1";
+                            if($result = mysqli_query($connection, $abc))
+                              {
+                                while($rowa = mysqli_fetch_array($result))
+                                  { 
+                                    $out=$rowa['elecname'];
+  
+                      ?>
                           <li class="active">
-                              <a href="#"><i class="fa fa-inbox"></i> Inbox <span class="label label-danger pull-right">2</span></a>
-
-                          </li>
-                          <li>
-                              <a href="#"><i class="fa fa-envelope-o"></i> Sent Mail</a>
-                          </li>
-                          <li>
-                              <a href="#"><i class="fa fa-bookmark-o"></i> Important</a>
-                          </li>
-                          <li>
-                              <a href="#"><i class=" fa fa-external-link"></i> Drafts <span class="label label-info pull-right">30</span></a>
-                          </li>
-                          <li>
-                              <a href="#"><i class=" fa fa-trash-o"></i> Trash</a>
-                          </li>
+                              <a href="#"><i class="fa fa-inbox"></i> <?php echo $out; ?> <span class="label label-info pull-right">New</span></a>
+                              </li>
+                              <?php 
+                                    }
+                                     }
+                              ?>
+                       
                       </ul>
                       <ul class="nav nav-pills nav-stacked labels-info inbox-divider">
                           <li> <h4>Labels</h4> </li>
@@ -56,7 +58,7 @@ include('student_session.php');
                       </ul>
                       <ul class="nav nav-pills nav-stacked labels-info ">
                           <li> <h4>Buddy online</h4> </li>
-                          <li> <a href="#"> <i class=" fa fa-circle text-success"></i>Alireza Zare <p>I do not think</p></a>  </li>
+                          <li> <a href="#"> <i class=" fa fa-circle text-success"></i>Raman <p>I do not think</p></a>  </li>
                       </ul>
 
                       <div class="inbox-body text-center">
