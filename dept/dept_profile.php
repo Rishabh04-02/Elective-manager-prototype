@@ -132,7 +132,7 @@ include_once("../dbconnect.php");
                   </aside>
                   <aside class="lg-side">
                       <div class="inbox-head">
-                          <h3>Dashboard - Features to implement</h3>
+                          <h3> Department - Dashboard </h3>
                           <form action="#" class="pull-right position">
                               <div class="input-append">
                                   <a href="../logout.php"><button class="btn sr-btn" type="button"><i class="fa fa-external-link"></i> Logout</button></a>
