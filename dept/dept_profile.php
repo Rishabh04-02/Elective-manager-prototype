@@ -167,17 +167,28 @@ else if(isset($_POST['delete-elective']))
 }
 else if($_POST['accept-student'])
 {
-  include_once('dept_student_accept.php');
+  $roll=$_POST["roll-student"];
+  echo $roll;
+ // header('Location:dept_student_accept.php');
+ // include_once('dept_student_list.php');
+
 }
 else if($_POST['reject-student'])
 {
   include_once('dept_student_reject.php');
+}
+else if($_REQUEST['check'])
+{
+  
+   include_once('dept_student_list.php');
+  
 }
 else
 {
 
      include_once('dept_content.php'); 
 }
+
 
 ?>
 </div>

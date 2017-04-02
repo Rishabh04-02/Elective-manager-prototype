@@ -78,7 +78,7 @@ else
                                   <td class="view-message ">Department</td>
                                   <td class="view-message ">CGPI</td>
                                   <td class="view-message ">Priority</td>
-                                  <td class="view-message text-right"></td>
+                                  
                               </tr>
 
                               <?php
@@ -96,15 +96,11 @@ else
                               ?>
                               <form id="accept-reject" action="" method="post" role="form">
                               <tr class="unread">
-                                  <td class="view-message  dont-show" name="roll-student" id="roll-student"><?php echo "".$data['rollno']; ?></td>
-                                  <td class="view-message "><?php echo "".$data['bracode']; ?></td>
-                                  <td class="view-message "><?php echo "".$data['cgpi']; ?></td>                    
-                                  <td class="view-message "><?php echo "".$data['priority']; ?></td>
-                                  <td class="inbox-small-cells text-right">
-                                    
-                                    <button type="button" class="btn btn-danger" id="delete-student" name="delete-student" value="Delete">Delete</button>
-                                   
-                                  </td>
+                                  <td class="view-message  dont-show" name="roll-student" id="roll-student"><?php echo $data['rollno']; ?></td>
+                                  <td class="view-message "><?php echo $data['bracode']; ?></td>
+                                  <td class="view-message "><?php echo $data['cgpi']; ?></td>                    
+                                  <td class="view-message "><?php echo $data['priority']; ?></td>
+                                  
                               </tr>
                               </form>
                                <?php

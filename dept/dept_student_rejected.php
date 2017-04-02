@@ -8,12 +8,12 @@ $abc1="SELECT electiveid FROM dept_login WHERE deptid='$outname1'";
   $rowa1 = mysqli_fetch_array($result1);
   $out1=$rowa1['electiveid'];
 $rollno=$_REQUEST['rollno'];
-$abc="Update $out1 set selects=1 WHERE rollno=$rollno ";
+$abc="Delete FROM $out1 WHERE rollno=$rollno ";
 echo $abc;
 
 if(mysqli_query($connection, $abc))
 {
-	echo "updated";
+	echo "Deleted";
 }
 else
 {
