@@ -1,5 +1,20 @@
+<?php
+include('dept_session.php');
+include_once("../dbconnect.php");
+$outname1=$_SESSION['login_user'];
 
-                      <div class="inbox-body">
+if(1)
+{
+  $rollno=$_POST['roll-student'];
+  echo "".$rollno;
+}
+else
+{
+  echo "xxxx";
+}
+
+?>
+<div class="inbox-body">
                          <div class="mail-option">
                              <div class="chk-all">
                                  <input type="checkbox" class="mail-checkbox mail-group-checkbox">
@@ -59,47 +74,45 @@
                           <table class="table table-inbox table-hover">
                             <tbody>
                               <tr class="unread">
-                                  <td class="inbox-small-cells">
-                                      <input type="checkbox" class="mail-checkbox">
-                                  </td>
-                                  <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
-                                  <td class="view-message  dont-show">PRioritize</td>
-                                  <td class="view-message ">show the list to priorities electives.</td>
-                                  <td class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
-                                  <td class="view-message  text-right">9:27 AM</td>
+                                  <td class="view-message  dont-show">Roll No.</td>
+                                  <td class="view-message ">Department</td>
+                                  <td class="view-message ">CGPI</td>
+                                  <td class="view-message ">Priority</td>
+                                  <td class="view-message text-right"></td>
                               </tr>
+
+                              <?php
+                                $abc="SELECT electiveid FROM dept_login WHERE deptid='$outname1'";
+                                $result = mysqli_query($connection, $abc);
+                                $rowa = mysqli_fetch_array($result);
+                                $out=$rowa['electiveid'];
+
+                            
+                                $sql="SELECT * FROM $out where selects=1";
+                            
+                                $result=mysqli_query($connection, $sql);
+                                while($data=mysqli_fetch_array($result))
+                                {
+                              ?>
+                              <form id="accept-reject" action="" method="post" role="form">
                               <tr class="unread">
-                                  <td class="inbox-small-cells">
-                                      <input type="checkbox" class="mail-checkbox">
+                                  <td class="view-message  dont-show" name="roll-student" id="roll-student"><?php echo "".$data['rollno']; ?></td>
+                                  <td class="view-message "><?php echo "".$data['bracode']; ?></td>
+                                  <td class="view-message "><?php echo "".$data['cgpi']; ?></td>                    
+                                  <td class="view-message "><?php echo "".$data['priority']; ?></td>
+                                  <td class="inbox-small-cells text-right">
+                                    
+                                    <button type="button" class="btn btn-danger" id="delete-student" name="delete-student" value="Delete">Delete</button>
+                                   
                                   </td>
-                                  <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
-                                  <td class="view-message  dont-show">Priority once</td>
-                                  <td class="view-message ">One can only prioritize only once & can't alter then.</td>
-                                  <td class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
-                                  <td class="view-message  text-right">9:27 AM</td>
                               </tr>
-                              <tr class="unread">
-                                  <td class="inbox-small-cells">
-                                      <input type="checkbox" class="mail-checkbox">
-                                  </td>
-                                  <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
-                                  <td class="view-message  dont-show">mail selection</td>
-                                  <td class="view-message ">will get notified when selected for elective.</td>
-                                  <td class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
-                                  <td class="view-message  text-right">9:27 AM</td>
-                              </tr>
-                              <tr class="unread">
-                                  <td class="inbox-small-cells">
-                                      <input type="checkbox" class="mail-checkbox">
-                                  </td>
-                                  <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
-                                  <td class="view-message  dont-show">Classes updates</td>
-                                  <td class="view-message ">once elective chosen, student will start getting that electives classes schedule put on by dept.</td>
-                                  <td class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
-                                  <td class="view-message  text-right">9:27 AM</td>
-                              </tr>
+                              </form>
+                               <?php
+                                }
+                               ?>
                               </tbody>
-                          </table>
+                          </table> 
                           </div>
                   </aside>
-</div>
+              </div>
+
