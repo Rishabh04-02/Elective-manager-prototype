@@ -1,3 +1,5 @@
+<div class="jumbotron">
 <?php
-echo "deleted";
+		echo "<center>Elective deleted</center>";
 ?>
+</div>

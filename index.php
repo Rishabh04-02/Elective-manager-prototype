@@ -44,37 +44,25 @@
 </center>
 </div>
 </div> -->
-<div class="jumbotron" style="background: transparent; color: black">
+<div class="jumbotron" style="background: transparent; color: white">
   <br>
   <center>
     <h1>Open Elective Management System</h1>
     <div class="container">
     <div class="row little-padding">
-        <div class="col-md-3">
-            <?php
+                    <?php
                  $qr=mysqli_query($connection," SELECT COUNT(deptid) as total FROM dept_login");
                  $num_rows = mysqli_fetch_assoc($qr);
+                 echo "<center>";
                  echo "Registered Departments - ";
-                 echo $num_rows['total'];      
-            ?>
-        </div>
-        <div class="col-md-3">
-        <?php
-                 $qr=mysqli_query($connection," SELECT COUNT(rollno) as total FROM student_login");
-                 $num_rows = mysqli_fetch_assoc($qr);
-                 echo "Registered Departments - ";
-                 echo $num_rows['total'];      
-            ?>            
-        </div>
-        <div class="col-md-3">
-        <?php
-                 //Allotted electives count to students
-                 /*$qr=mysqli_query($connection," SELECT COUNT(deptid) as total FROM dept_login");
-                 $num_rows = mysqli_fetch_assoc($qr);
-                 echo "Registered Departments - ";
-                 echo $num_rows['total'];      */
-            ?>            
-        </div>
+                 echo $num_rows['total'];    
+                 echo "</center>";  
+                  
+            include_once('info.php');
+        ?>            
+        
+        
+        
     </div>
 </div>
 </center>
