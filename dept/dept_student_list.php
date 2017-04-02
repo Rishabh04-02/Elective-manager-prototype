@@ -109,12 +109,12 @@ else
                                   <td class="view-message "></td>
                                   <td class="inbox-small-cells">
                                     
-                                      <button type="button" class="btn btn-success" id="accept-student" name="accept-student" value="Accept">Accept</button>
+                                      <input type="submit" class="btn btn-success" id="accept-student" name="accept-student" value="Accept">
                                     
                                   </td>
                                   <td class="inbox-small-cells text-right">
                                     
-                                    <button type="button" class="btn btn-danger" id="reject-student" name="reject-student" value="Reject">Reject</button>
+                                    <input type="submit" class="btn btn-danger" id="reject-student" name="reject-student" value="Reject">
                                    
                                   </td>
                                               

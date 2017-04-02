@@ -165,6 +165,14 @@ else if(isset($_POST['delete-elective']))
 {
   include_once('dept_delete_elective.php');
 }
+else if($_POST['accept-student'])
+{
+  include_once('dept_student_accept.php');
+}
+else if($_POST['reject-student'])
+{
+  include_once('dept_student_reject.php');
+}
 else
 {
 
