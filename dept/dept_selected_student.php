@@ -3,15 +3,15 @@ include('dept_session.php');
 include_once("../dbconnect.php");
 $outname1=$_SESSION['login_user'];
 
-if(isset($_POST['accept-student']))
+if(1)
 {
   $rollno=$_POST['roll-student'];
-  echo "".$rollno."sss";
+  echo "".$rollno;
 }
 else
 {
   echo "xxxx";
-
+}
 
 ?>
 <div class="inbox-body">
@@ -77,13 +77,8 @@ else
                                   <td class="view-message  dont-show">Roll No.</td>
                                   <td class="view-message ">Department</td>
                                   <td class="view-message ">CGPI</td>
-                                  <td class="view-message "></td>
                                   <td class="view-message ">Priority</td>
-                                  <td class="view-message "></td>
-                                  <td >
-
-                                  </td>
-                                  <td class="inbox-small-cells text-right"></td>
+                                  <td class="view-message text-right"></td>
                               </tr>
 
                               <?php
@@ -93,7 +88,7 @@ else
                                 $out=$rowa['electiveid'];
 
                             
-                                $sql="SELECT * FROM $out where selects=0";
+                                $sql="SELECT * FROM $out where selects=1";
                             
                                 $result=mysqli_query($connection, $sql);
                                 while($data=mysqli_fetch_array($result))
@@ -103,22 +98,13 @@ else
                               <tr class="unread">
                                   <td class="view-message  dont-show" name="roll-student" id="roll-student"><?php echo "".$data['rollno']; ?></td>
                                   <td class="view-message "><?php echo "".$data['bracode']; ?></td>
-                                  <td class="view-message "><?php echo "".$data['cgpi']; ?></td>
-                                  <td class="view-message "></td>
+                                  <td class="view-message "><?php echo "".$data['cgpi']; ?></td>                    
                                   <td class="view-message "><?php echo "".$data['priority']; ?></td>
-                                  <td class="view-message "></td>
-                                  <td class="inbox-small-cells">
-                                    
-                                      <button type="button" class="btn btn-success" id="accept-student" name="accept-student" value="Accept">Accept</button>
-                                    
-                                  </td>
                                   <td class="inbox-small-cells text-right">
                                     
-                                    <button type="button" class="btn btn-danger" id="reject-student" name="reject-student" value="Reject">Reject</button>
+                                    <button type="button" class="btn btn-danger" id="delete-student" name="delete-student" value="Delete">Delete</button>
                                    
                                   </td>
-                                              
-
                               </tr>
                               </form>
                                <?php
@@ -130,6 +116,3 @@ else
                   </aside>
               </div>
 
-<?php
-}
-?>  

@@ -64,10 +64,31 @@ include('student_session.php');
                                 while($rowa = mysqli_fetch_array($result))
                                   { 
                                     $out=$rowa['elecname'];
+                                    $outname1=$_SESSION['login_user'];
+                                    $query="SELECT * FROM $out WHERE rollno='$outname1' and selects=1";
+                                   // echo $query;
+                                    $color="color:red";
+                                    $icon="fa-times";
+                                    if($result1 = mysqli_query($connection, $query))
+                                    {
+                                      if($data=mysqli_fetch_array($result1))
+                                      {
+                                        //$x="yes".$data['rollno'];
+                                        $color="color:green";
+                                        $icon="fa-check";
+                                      }
+                                      else
+                                      {  
+                                        $color="color:red";
+                                        $icon="fa-times";
+                                      } 
+
+                                     } 
+
   
                       ?>
                           <li class="active">
-                          <a href="#"><i class="fa fa-inbox"></i> <?php echo $out; ?> <span class="label label-info pull-right"></a>
+                          <a href="#"><i class="fa <?php echo $icon; ?>" style="<?php echo $color; ?>"></i> <?php echo $out; ?> <span class="label label-info pull-right"></a>
                             <form action="" method="post">
                             <div>
                         <input type="submit" name="syllabus" id="<?php echo $out; ?>" tabindex="4" class="form-control btn btn-info" value="<?php echo $out; ?>">
@@ -75,6 +96,7 @@ include('student_session.php');
                           </form>
                               </li>
                               <?php 
+                                
                                     }
                                      }
                               ?>
