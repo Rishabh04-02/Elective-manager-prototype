@@ -78,7 +78,7 @@ else
                                   <td class="view-message ">Department</td>
                                   <td class="view-message ">CGPI</td>
                                   <td class="view-message "></td>
-                                  <td class="view-message ">Priority</td>
+                                  <td class="view-message " onclick="pri()">Priority<i class="fa fa-arrow-down" aria-hidden="true" ></i></td>
                                   <td class="view-message ">condition</td>
                                   <td >
 
@@ -92,9 +92,13 @@ else
                                 $rowa = mysqli_fetch_array($result);
                                 $out=$rowa['electiveid'];
 
+                             
+                                //SELECT * FROM  `csd315` ORDER BY  `csd315`.`priority` ASC
                             
-                                $sql="SELECT * FROM $out where selects=0";
-                            
+                                $sql="SELECT * FROM $out where selects=0 ";
+                                if($_REQUEST['pri']==1)
+                                  $sql = $sql."ORDER BY `priority` ASC ";
+                                
                                 $result=mysqli_query($connection, $sql);
                                 while($data=mysqli_fetch_array($result))
                                 {
@@ -145,6 +149,13 @@ else
                   document.getElementById($var).innerHTML = "accepted"+rollno;
                   window.location.href="dept_student_rejected.php?rollno="+rollno;
               }
+               function pri() {
+                $var=rollno;
+               
+                 
+                  window.location.href="dept_profile.php?pri=1";
+                  document.getElementById(1).innerHTML = "accepted";
+              } 
                
 
               </script>

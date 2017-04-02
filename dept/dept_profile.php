@@ -177,12 +177,11 @@ else if($_POST['reject-student'])
 {
   include_once('dept_student_reject.php');
 }
-else if($_REQUEST['check'])
-{
-  
+else if($_REQUEST['check']||$_REQUEST['pri'])
+{ 
    include_once('dept_student_list.php');
-  
 }
+
 else
 {
 
