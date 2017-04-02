@@ -88,15 +88,13 @@ include_once("../dbconnect.php");
                       <!--st-->
                        <ul class="inbox-nav inbox-divider nav nav-pills nav-stacked labels-info inbox-divider">
                       <li class="active">
-                          <a href="#"><i class="fa fa-inbox"></i> Student List <span class="label label-info pull-right"></a>
+
+                          <a href="#"><i class="fa fa-inbox"></i>Applicants list<span class="label label-info pull-right"></a>
                             <form action="" method="post">
                             <div>
-                        <input type="submit" name="student-list" id="student-list" tabindex="4" class="form-control btn btn-info" value="View Student">
-                      </div>
-                          </form>
-                          <form action="" method="post">
-                            <div>
+                        <input type="submit" name="student-list" id="student-list tabindex="4" class="form-control btn btn-info" value="View Student">
                         <input type="submit" name="selected-student" id="selected-student" tabindex="4" class="form-control btn btn-info" value="Selected Student">
+
                       </div>
                           </form>
                               </li>

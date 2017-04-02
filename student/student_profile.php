@@ -58,7 +58,7 @@ include('student_session.php');
                       <ul class="inbox-nav inbox-divider nav nav-pills nav-stacked labels-info inbox-divider">
                       <li> <h4>Available Electives</h4> </li>
                       <?php
-                            $abc="SELECT  elecname  FROM elective WHERE 1";
+                            $abc="SELECT  elecname  FROM elective WHERE publish=1";
                             if($result = mysqli_query($connection, $abc))
                               {
                                 while($rowa = mysqli_fetch_array($result))
@@ -142,6 +142,10 @@ include('student_session.php');
 <?php
 
 if(isset($_POST['prioritize']))
+{
+  include_once('student_prioritize.php');
+}
+else if(isset($_POST['priority']))
 {
   include_once('student_prioritize.php');
 }

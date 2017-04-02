@@ -6,11 +6,11 @@ $outname1=$_SESSION['login_user'];
 if(isset($_POST['accept-student']))
 {
   $rollno=$_POST['roll-student'];
-  echo "".$rollno."sss";
+  //echo "".$rollno."sss";
 }
 else
 {
-  echo "xxxx";
+ // echo "xxxx";
 
 
 ?>

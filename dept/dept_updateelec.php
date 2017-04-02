@@ -67,7 +67,7 @@ else
 ?>
 
 <center>
-<h3><code>Fill the details below to publish elective</code></h3>
+<h3><code>Fill the details below to update elective</code></h3>
 </center>
 <form id="elective-form" action="" method="post" role="form" >
                   <div class="form-group">
