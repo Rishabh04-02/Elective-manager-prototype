@@ -79,7 +79,7 @@ else
                                   <td class="view-message ">CGPI</td>
                                   <td class="view-message "></td>
                                   <td class="view-message ">Priority</td>
-                                  <td class="view-message "></td>
+                                  <td class="view-message ">condition</td>
                                   <td >
 
                                   </td>
@@ -101,20 +101,22 @@ else
                               ?>
                               <form id="accept-reject" action="" method="post" role="form">
                               <tr class="unread">
-                                  <td class="view-message  dont-show" name="roll-student" id="roll-student"><?php echo "".$data['rollno']; ?></td>
-                                  <td class="view-message "><?php echo "".$data['bracode']; ?></td>
-                                  <td class="view-message "><?php echo "".$data['cgpi']; ?></td>
+                                  <td class="view-message  dont-show" name="roll-student" id="roll-student"><?php echo $data['rollno']; ?></td>
+                                  <td class="view-message "><?php echo $data['bracode']; ?></td>
+                                  <td class="view-message "><?php echo $data['cgpi']; ?></td>
                                   <td class="view-message "></td>
-                                  <td class="view-message "><?php echo "".$data['priority']; ?></td>
-                                  <td class="view-message "></td>
-                                  <td class="inbox-small-cells">
+                                  <td class="view-message "><?php echo $data['priority']; ?></td>
+                                  <td class="view-message " id="<?php echo $data['rollno']; ?>">none</td>
+                                 
+                                 
+                                  <td class="inbox-small-cells text-right">
                                     
-                                      <input type="submit" class="btn btn-success" id="accept-student" name="accept-student" value="Accept">
-                                    
+                                    <input type="button" class="btn btn-success" id="accept-student" name="accept-student" value="Accept" onclick="acc(<?php echo $data['rollno']; ?>)">
+                                   
                                   </td>
                                   <td class="inbox-small-cells text-right">
                                     
-                                    <input type="submit" class="btn btn-danger" id="reject-student" name="reject-student" value="Reject">
+                                    <input type="button" class="btn btn-danger" id="accept-student" name="accept-student" value="Rejected" onclick="rej(<?php echo $data['rollno']; ?>)">
                                    
                                   </td>
                                               
@@ -129,6 +131,24 @@ else
                           </div>
                   </aside>
               </div>
+              <script>
+             
+              function acc(rollno) {
+                $var=rollno;
+               
+                  document.getElementById($var).innerHTML = "accepted"+rollno;
+                  window.location.href="dept_student_accept.php?rollno="+rollno;
+              }
+              function rej(rollno) {
+                $var=rollno;
+               
+                  document.getElementById($var).innerHTML = "accepted"+rollno;
+                  window.location.href="dept_student_rejected.php?rollno="+rollno;
+              }
+               
+
+              </script>
+
 
 <?php
 }
