@@ -102,7 +102,7 @@ include_once("../dbconnect.php");
                       </ul>
                       <!--sdf_-->       
                        
-                      <ul class="nav nav-pills nav-stacked labels-info inbox-divider">
+                      <!-- <ul class="nav nav-pills nav-stacked labels-info inbox-divider">
                           <li> <h4>Labels</h4> </li>
                           <li> <a href="#"> <i class=" fa fa-sign-blank text-danger"></i> Work </a> </li>
                       </ul>
@@ -126,8 +126,8 @@ include_once("../dbconnect.php");
                               <a class="btn mini btn-info" href="javascript:;">
                                   <i class="fa fa-cog"></i>
                               </a>
-                          </div>
-                      </div>
+                          </div> 
+                      </div>-->
 
                   </aside>
                   <aside class="lg-side">

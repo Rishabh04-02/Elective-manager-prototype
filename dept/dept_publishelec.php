@@ -33,7 +33,7 @@ if(isset($_POST['elective-submit']))
     		echo "<center>Elective details updated</center><br>";
 
     		//publishing elective by creating a new registration table for elective
-   $creat="CREATE TABLE $out(rollno varchar(10) PRIMARY KEY, bracode varchar(10),cgpi varchar(5),priority int(2))";
+   $creat="CREATE TABLE $out(rollno varchar(10) PRIMARY KEY, bracode varchar(10),cgpi varchar(5),priority int(2),selects int(2) default 0)";
 
     		if (mysqli_query($connection, $creat))
     		{

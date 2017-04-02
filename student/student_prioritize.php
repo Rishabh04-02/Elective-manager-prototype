@@ -11,6 +11,7 @@ if(isset($_POST['priority']))
 {
 
 //catch the details from form here
+	$rollno=$_SESSION['login_user'];
 $prior=$_POST['priority'];
 	
 	$outname=$_SESSION['login_user'];

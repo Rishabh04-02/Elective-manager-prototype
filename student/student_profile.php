@@ -102,7 +102,7 @@ include('student_session.php');
                               ?>
                        
                       </ul>
-                      <ul class="nav nav-pills nav-stacked labels-info inbox-divider">
+                      <!-- <ul class="nav nav-pills nav-stacked labels-info inbox-divider">
                           <li> <h4>Labels</h4> </li>
                           <li> <a href="#"> <i class=" fa fa-sign-blank text-danger"></i> Work </a> </li>
                       </ul>
@@ -127,12 +127,12 @@ include('student_session.php');
                                   <i class="fa fa-cog"></i>
                               </a>
                           </div>
-                      </div>
+                      </div>-->
 
                   </aside>
                   <aside class="lg-side">
                       <div class="inbox-head">
-                          <h3>Dashboard - Features to implement</h3>
+                          <h3>Student - Dashboard</h3>
                           <form action="#" class="pull-right position">
                               <div class="input-append">
                                   <a href="../logout.php"><button class="btn sr-btn" type="button"><i class="fa fa-external-link"></i> Logout</button></a>
