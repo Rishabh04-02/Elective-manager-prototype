@@ -29,78 +29,41 @@ include('admin_session.php');
                       </div>
                       <div class="inbox-body">
                           <a href="#myModal" data-toggle="modal"  title="Compose"    class="btn btn-compose">
-                              Compose
+                              Delete Elective
                           </a>
-                          <!-- Modal -->
-<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade" style="display: none;">
-                              <div class="modal-dialog">
-                                  <div class="modal-content">
-                                      <div class="modal-header">
-                                          <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                                          <h4 class="modal-title">Compose</h4>
-                                      </div>
-                                      <div class="modal-body">
-                                          <form role="form" class="form-horizontal">
-                                              <div class="form-group">
-                                                  <label class="col-lg-2 control-label">To</label>
-                                                  <div class="col-lg-10">
-                                                      <input type="text" placeholder="" id="inputEmail1" class="form-control">
-                                                  </div>
-                                              </div>
-                                              <div class="form-group">
-                                                  <label class="col-lg-2 control-label">Cc / Bcc</label>
-                                                  <div class="col-lg-10">
-                                                      <input type="text" placeholder="" id="cc" class="form-control">
-                                                  </div>
-                                              </div>
-                                              <div class="form-group">
-                                                  <label class="col-lg-2 control-label">Subject</label>
-                                                  <div class="col-lg-10">
-                                                      <input type="text" placeholder="" id="inputPassword1" class="form-control">
-                                                  </div>
-                                              </div>
-                                              <div class="form-group">
-                                                  <label class="col-lg-2 control-label">Message</label>
-                                                  <div class="col-lg-10">
-                                                      <textarea rows="10" cols="30" class="form-control" id="" name=""></textarea>
-                                                  </div>
-                                              </div>
-
-                                              <div class="form-group">
-                                                  <div class="col-lg-offset-2 col-lg-10">
-                                                      <span class="btn green fileinput-button">
-                                                        <i class="fa fa-plus fa fa-white"></i>
-                                                        <span>Attachment</span>
-                                                        <input type="file" name="files[]" multiple="">
-                                                      </span>
-                                                      <button class="btn btn-send" type="submit">Send</button>
-                                                  </div>
-                                              </div>
-                                          </form>
-                                      </div>
-                                  </div><!-- /.modal-content -->
-                              </div><!-- /.modal-dialog -->
-                          </div><!-- /.modal -->
+                          
                       </div>
-                      <ul class="inbox-nav inbox-divider">
+                      <?php
+                            include_once('../dbconnect.php');
+                            $qr=mysqli_query($connection," SELECT COUNT(elecname) as total FROM elective");
+                            $num_rows = mysqli_fetch_assoc($qr);
+                      ?>
+                      <ul class="nav nav-pills nav-stacked labels-info inbox-divider">
                           <li class="active">
-                              <a href="#"><i class="fa fa-inbox"></i> Inbox <span class="label label-danger pull-right">2</span></a>
+                              <a href="#"><i class="fa fa-inbox"></i>Available Departments<span class="label label-info pull-right"><?php echo $num_rows['total']; ?></span></a>
+                              </li>
+                      </ul>
 
-                          </li>
-                          <li>
-                              <a href="#"><i class="fa fa-envelope-o"></i> Sent Mail</a>
-                          </li>
-                          <li>
-                              <a href="#"><i class="fa fa-bookmark-o"></i> Important</a>
-                          </li>
-                          <li>
-                              <a href="#"><i class=" fa fa-external-link"></i> Drafts <span class="label label-info pull-right">30</span></a>
-                          </li>
-                          <li>
-                              <a href="#"><i class=" fa fa-trash-o"></i> Trash</a>
+                      <?php
+                            $qr=mysqli_query($connection," SELECT COUNT(elecname) as total FROM elective where publish=1");
+                            $num_rows = mysqli_fetch_assoc($qr);
+                      ?>
+                      <ul class="nav nav-pills nav-stacked labels-info inbox-divider">
+                          <li class="active">
+                              <a href="#"><i class="fa fa-inbox"></i>Published Electives<span class="label label-info pull-right"><?php echo $num_rows['total']; ?></span></a>
                           </li>
                       </ul>
-                      <ul class="nav nav-pills nav-stacked labels-info inbox-divider">
+                      <div class="inbox-body">
+                      <form action="" method="post">
+                            <div>
+                        <input type="submit" name="view-el" id="view-el" tabindex="4" class="form-control btn btn-info" value="View Electives">
+                      </div>
+                          </form>
+                          
+                      </div>
+                      
+
+                      <!-- <ul class="nav nav-pills nav-stacked labels-info inbox-divider">
                           <li> <h4>Labels</h4> </li>
                           <li> <a href="#"> <i class=" fa fa-sign-blank text-danger"></i> Work </a> </li>
                       </ul>
@@ -125,7 +88,7 @@ include('admin_session.php');
                                   <i class="fa fa-cog"></i>
                               </a>
                           </div>
-                      </div>
+                      </div>-->
 
                   </aside>
                   <aside class="lg-side">
@@ -137,110 +100,21 @@ include('admin_session.php');
                               </div>
                           </form>
                       </div>
-                      <div class="inbox-body">
-                         <div class="mail-option">
-                             <div class="chk-all">
-                                 <input type="checkbox" class="mail-checkbox mail-group-checkbox">
-                                 <div class="btn-group">
-                                     <a data-toggle="dropdown" href="#" class="btn mini all" aria-expanded="false">
-                                         All
-                                         <i class="fa fa-angle-down "></i>
-                                     </a>
-                                     <ul class="dropdown-menu">
-                                         <li><a href="#"> None</a></li>
-                                         <li><a href="#"> Read</a></li>
-                                         <li><a href="#"> Unread</a></li>
-                                     </ul>
-                                 </div>
-                             </div>
 
-                             <div class="btn-group">
-                                 <a data-original-title="Refresh" data-placement="top" data-toggle="dropdown" href="#" class="btn mini tooltips">
-                                     <i class=" fa fa-refresh"></i>
-                                 </a>
-                             </div>
-                             <div class="btn-group hidden-phone">
-                                 <a data-toggle="dropdown" href="#" class="btn mini blue" aria-expanded="false">
-                                     More
-                                     <i class="fa fa-angle-down "></i>
-                                 </a>
-                                 <ul class="dropdown-menu">
-                                     <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
-                                     <li><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
-                                     <li class="divider"></li>
-                                     <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
-                                 </ul>
-                             </div>
-                             <div class="btn-group">
-                                 <a data-toggle="dropdown" href="#" class="btn mini blue">
-                                     Move to
-                                     <i class="fa fa-angle-down "></i>
-                                 </a>
-                                 <ul class="dropdown-menu">
-                                     <li><a href="#"><i class="fa fa-pencil"></i> Mark as Read</a></li>
-                                     <li><a href="#"><i class="fa fa-ban"></i> Spam</a></li>
-                                     <li class="divider"></li>
-                                     <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
-                                 </ul>
-                             </div>
 
-                             <ul class="unstyled inbox-pagination">
-                                 <li><span>1-50 of 234</span></li>
-                                 <li>
-                                     <a class="np-btn" href="#"><i class="fa fa-angle-left  pagination-left"></i></a>
-                                 </li>
-                                 <li>
-                                     <a class="np-btn" href="#"><i class="fa fa-angle-right pagination-right"></i></a>
-                                 </li>
-                             </ul>
-                         </div>
-                          <table class="table table-inbox table-hover">
-                            <tbody>
-                              <tr class="unread">
-                                  <td class="inbox-small-cells">
-                                      <input type="checkbox" class="mail-checkbox">
-                                  </td>
-                                  <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
-                                  <td class="view-message  dont-show">Registered depts</td>
-                                  <td class="view-message ">on the left side registered deptartments will show in place of labels</td>
-                                  <td class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
-                                  <td class="view-message  text-right">9:27 AM</td>
-                              </tr>
-                              <tr class="unread">
-                                  <td class="inbox-small-cells">
-                                      <input type="checkbox" class="mail-checkbox">
-                                  </td>
-                                  <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
-                                  <td class="view-message  dont-show">Registered students</td>
-                                  <td class="view-message ">Left side - Registered students count will show, Sorted elective wise & total no. of students also.</td>
-                                  <td class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
-                                  <td class="view-message  text-right">9:27 AM</td>
-                              </tr>
-                              <tr class="unread">
-                                  <td class="inbox-small-cells">
-                                      <input type="checkbox" class="mail-checkbox">
-                                  </td>
-                                  <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
-                                  <td class="view-message  dont-show">Allotted</td>
-                                  <td class="view-message ">On the left side it will also show that the no. of students selected in each department till now.</td>
-                                  <td class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
-                                  <td class="view-message  text-right">9:27 AM</td>
-                              </tr>
-                              <tr class="unread">
-                                  <td class="inbox-small-cells">
-                                      <input type="checkbox" class="mail-checkbox">
-                                  </td>
-                                  <td class="inbox-small-cells"><i class="fa fa-star"></i></td>
-                                  <td class="view-message  dont-show">Allotment %</td>
-                                  <td class="view-message ">On the left side it will also show the allotment percentage of students.</td>
-                                  <td class="view-message  inbox-small-cells"><i class="fa fa-paperclip"></i></td>
-                                  <td class="view-message  text-right">9:27 AM</td>
-                              </tr>
-                              </tbody>
-                          </table>
-                      </div>
-                  </aside>
-              </div>
+<?php
+
+if(isset($_POST['view-el']))
+{
+  include_once('admin_view.php');
+}
+else
+{
+  include_once('admin_content.php');
+}
+
+
+?>
 </div>
 </body>
 </html>
