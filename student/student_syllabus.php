@@ -11,7 +11,9 @@
   {
   $seats=$rowa['seats'];
   $link=$rowa['link'];
+  //$tech=$rowa['teachernm'];
   echo "Seats Availabe"."=".$seats."<br>";
+ // echo "Teacher Name"."=".$tech."<br>";
   echo $link;
 }
 }

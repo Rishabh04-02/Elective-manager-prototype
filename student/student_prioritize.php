@@ -11,8 +11,17 @@ if(isset($_POST['priority']))
 {
 
 //catch the details from form here
+	$rollno=$_SESSION['login_user'];
 $prior=$_POST['priority'];
 echo "$prior";
+//$sql = "UPDATE student_login SET pr2=$prior WHERE rollno= '$rollno'" ;
+//if (mysqli_query($connection, $sql)) 
+//{
+	//echo "sucees given".<br>
+//	i++;
+//}
+
+
 /*
 
 	
