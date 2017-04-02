@@ -44,7 +44,7 @@
 </center>
 </div>
 </div> -->
-<div class="jumbotron" style="background: transparent; color: white">
+<div class="jumbotron" style="background: transparent; color: white;">
   <br>
   <center>
     <h1>Open Elective Management System</h1>
@@ -67,7 +67,5 @@
 </div>
 </center>
 </div>
-
-
 </body>
 </html>

@@ -18,13 +18,14 @@
   echo "<center>Published Electives</center>";
   echo '<table class="table"><thead><tr>';
   $abc2="SELECT elecname,teachernm,seats,link FROM elective WHERE publish=1";
-  echo '<th>electives</th><th>teacher</th><th>seats</th><th>syllabus link</th></tr></thead><tbody><tr><td>';
+  echo '<th>electives</th><th>teacher</th><th>seats</th><th>syllabus link</th></tr></thead><tbody><tr>';
     if($result2 = mysqli_query($connection, $abc2))
     {
     while($rowa = mysqli_fetch_array($result2))
     {
-      echo $rowa['elecname']."</td><td>".$rowa['teachernm']."</td><td> ".$rowa['seats']."</td><td> ".$rowa['link']."</td></tr></tbody></table>";
+      echo "<td>".$rowa['elecname']."</td><td>".$rowa['teachernm']."</td><td> ".$rowa['seats']."</td><td> ".$rowa['link']."</td></tr>";
   }
+  echo "</tbody></table>";
 }
 
 
