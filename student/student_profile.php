@@ -143,11 +143,19 @@ include('student_session.php');
 
 if(isset($_POST['prioritize']))
 {
-  include_once('student_prioritize.php');
+  include_once('student_prioritize_test.php');
 }
 else if(isset($_POST['priority']))
 {
   include_once('student_prioritize.php');
+}
+else if(isset($_POST['submit_priority']))
+{
+  include_once('student_priority_set.php');
+}
+else if(isset($_REQUEST['up']))
+{
+  echo "".$_REQUEST['up'];
 }
 else if(isset($_POST['syllabus']))
 {
