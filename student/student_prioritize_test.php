@@ -124,9 +124,9 @@
                                   <td class="view-message  dont-show"></td>
                                   <td class="view-message ">
                                   <form action="" method="post">
-                                  <input type="submit" name="submit_priority" id="submit_priority" value="Set Priority">
+                                  <!--<input type="submit" name="submit_priority" id="submit_priority" value="Set Priority">-->
                                   </form>
-                                  <button onclick="set(<?php echo $count; ?>,'<?php echo $rollno;?>')"><?php echo $rollno."ss";?></button>
+                                  <button onclick="set(<?php echo $count; ?>,'<?php echo $rollno;?>')">Set Priority</button>
                                   </td>
                                   
                                   <td class="inbox-small-cells text-right">
