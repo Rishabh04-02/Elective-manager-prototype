@@ -153,10 +153,10 @@ else if(isset($_POST['submit_priority']))
 {
   include_once('student_priority_set.php');
 }
-else if(isset($_REQUEST['up']))
+/*else if(isset($_REQUEST['up']))
 {
   echo "".$_REQUEST['up'];
-}
+}*/
 else if(isset($_POST['syllabus']))
 {
   include_once('student_syllabus.php'); 

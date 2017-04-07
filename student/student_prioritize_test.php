@@ -63,7 +63,7 @@
                                   <td class="view-message  dont-show">Priority No.</td>
                                   <td class="view-message ">Set Priority</td>
                                   
-                                  <td class="inbox-small-cells text-right"></td>
+                                  <td class="inbox-small-cells">Previous Priority</td>
                               </tr>
                               	<?php
 								include_once("../dbconnect.php");
@@ -99,7 +99,21 @@
                                   ?>
                                   </select> 
                                   </td>
-                                  <td class="inbox-small-cells text-right"></td>
+                                   <?php
+
+                                    $sqlget = "SELECT * FROM student_login WHERE rollno = '$rollno'";
+                                    if($resultget = mysqli_query($connection, $sqlget))
+                                     {   
+                                      if($rowaget = mysqli_fetch_array($resultget))
+                                      {  
+                                        $x='pr'.$i;
+                                        $a=$rowaget[$x];
+                                  ?>
+                                  <td class="inbox-small-cells"><?php echo $a;?></td>
+                                  <?php
+                                  }
+                                }
+                                  ?>
                              	 </tr>
 
                              	 <?php
