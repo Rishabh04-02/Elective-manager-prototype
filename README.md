@@ -34,7 +34,7 @@ Refer [CONTRIBUTING.md](https://github.com/Rishabh04-02/Elective-manager/blob/ma
 2. MySql
 3. Apache
 
-### Running locally
+### Running/Installing locally
 1. clone the project using the command<br>
 ``git clone git@github.com:Rishabh04-02/Elective-manager.git
 ``
