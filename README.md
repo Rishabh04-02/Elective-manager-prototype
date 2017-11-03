@@ -24,7 +24,7 @@ There are 3 interfaces:
 * After login, the students are provided with the option to prioritize published electives. Each student can see his/her status in each elective. students can also change or recover their passwords if forgotten.
 
 ## Contributing
-Refer [CONTRIBUTING.md](https://github.com/Rishabh04-02/Elective-manager/blob/master/CONTRIBUTING.md)
+Refer [CONTRIBUTING.md](https://github.com/Rishabh04-02/Elective-manager/blob/master/CONTRIBUTING.md).
 
 ## Installation
 
