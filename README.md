@@ -6,7 +6,7 @@
 [abhishek-img]:	https://avatars3.githubusercontent.com/u/16971378?v=4&s=460
 
 # Elective Manager Prototype [Depricated]
-View Elective manager Project [here](https://github.com/Rishabh04-02/Elective-manager)
+View Elective manager Project [here](https://github.com/Rishabh04-02/Elective-manager).
 
 ## Introduction
 This project named Elective Manager, is an open source project. It will be used to allot the Elective subjects to undergraduate as well as post-graduate students. These elective subjects are published by the departments and are allotted to students based on their priority of published subjects and CGPA. 
