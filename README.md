@@ -52,4 +52,4 @@ Configure the project by visiting [http://localhost:4000](http://localhost:4000/
 [Submit an issue](https://github.com/Rishabh04-02/Elective-manager/issues) to the Elective Manager Github. And, of course, feel free to submit pull requests with bug fixes or changes.
 
 ## License
-This Project is licensed under License - [Apache-2.0](https://github.com/Rishabh04-02/Elective-manager/blob/master/LICENSE.md)
+This Project is licensed under License - [Apache-2.0](https://github.com/Rishabh04-02/Elective-manager/blob/master/LICENSE.md).
