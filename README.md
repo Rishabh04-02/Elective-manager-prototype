@@ -5,7 +5,7 @@
 [abhishek-link]:	https://github.com/Abhishek-sopho
 [abhishek-img]:	https://avatars3.githubusercontent.com/u/16971378?v=4&s=460
 
-# Elective Manager Prototype [Depricated]
+# Elective Manager Prototype [Deprecated]
 View The main project - Elective manager Project [here](https://github.com/Rishabh04-02/Elective-manager).
 
 ## Introduction
